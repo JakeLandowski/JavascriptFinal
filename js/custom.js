@@ -27,7 +27,7 @@ function init()
        if($this.width() >= 992 && !(panelsActivated))
                {
                $Panels.css(
-                           { 
+                           {
                              "width" : "33.33333333%",
                              "height" : "100%"
                            })
@@ -40,11 +40,11 @@ function init()
        else if($this.width() < 992 && !(panelsActivated))
                {
                $Panels.css(
-                           { 
+                           {
                              "height" : "33.33333333%",
                              "width" : "100%"
                            })
-               $buttonPanel.css( {"width" : "100%"} ); 
+               $buttonPanel.css( {"width" : "100%"} );
                }
        });
    
@@ -120,7 +120,7 @@ function mainAppEvents(btnPool)
                      {
                      $this.removeClass('buttonSelected');
                      btnPool.splice($.inArray(name, btnPool), 1);
-                     panelPool.splice($.inArray(name, panelPool), 1, 'noschool'); 
+                     panelPool.splice($.inArray(name, panelPool), 1, 'noschool');
                      }
                else if(btnPool.length >= 0 && btnPool.length < 4 &&
                !($this.hasClass('buttonSelected')) )
@@ -178,7 +178,7 @@ function changePanels(clicked)
                             prop = interim[i][0];
                             val = interim[i][1];
                               
-                            if(isMobile) { prop = mobile(prop); val = mobile(val); }  
+                            if(isMobile) { prop = mobile(prop); val = mobile(val); }
                             
                             this.style[prop] = val;
                             }
@@ -209,7 +209,7 @@ function changePanels(clicked)
                 
                 
             }
-    function animClickedEnd()   // ---------------------CLICKED / END / TRIGGERS FROM TRANSITIONEND INTERIM LEFT + RIGHT  
+    function animClickedEnd()   // ---------------------CLICKED / END / TRIGGERS FROM TRANSITIONEND INTERIM LEFT + RIGHT
             {                                                        // TRIGGERS FROM TRANSITIONEND BEGIN MIDDLE
                 $(this).off('transitionend', animClickedEnd);
                 
@@ -271,7 +271,7 @@ function changePanels(clicked)
                 
                 $bottomRowSection.find('#arrow')
                                 .css({ 'transform' : 'scale(0)',
-                                        'opacity' : '0'         
+                                        'opacity' : '0'
                                      });
                 setTimeout(function()                   // ---------ARROW ANIM START------------------
                            {
@@ -374,7 +374,7 @@ function changePanels(clicked)
                 
                 // ---------------- REVERT / CLICKED / BEING / SET TIMEOUT INTERIM------------------------
                 
-                begin = animations[clicked.id].revert.ifclicked.begin; 
+                begin = animations[clicked.id].revert.ifclicked.begin;
                 
                 for(i = 0; i < begin.length; i++)
                     {
@@ -388,7 +388,7 @@ function changePanels(clicked)
                 setTimeout(function()
                            {
                     
-                           interim = animations[clicked.id].revert.ifclicked.interim; 
+                           interim = animations[clicked.id].revert.ifclicked.interim;
                 
                            for(i = 0; i < interim.length; i++)
                                 {
@@ -419,7 +419,7 @@ function changePanels(clicked)
                 console.log('clicked revert ended');
                 $(this).off('transitionend', animRevertClickedEnd);
                 
-                end = animations[this.id].revert.ifclicked.end; 
+                end = animations[this.id].revert.ifclicked.end;
                 
                 for(i = 0; i < end.length; i++)
                     {
@@ -515,7 +515,7 @@ function changePanels(clicked)
             
             
                                        
-                   //------------------------------- FOR CLICKED PANEL   -------------------------------------- 
+                   //------------------------------- FOR CLICKED PANEL   --------------------------------------
                                            //  LOOP THROUGH BEGIN PROPS AND APPLY  //   [0] = prop, [1] = value
                 begin = animations[clicked.id].clicked.begin;
                 for(i = 0; i < begin.length; i++)
@@ -596,7 +596,7 @@ function changePanels(clicked)
              
 }
     
-//  ------------------------------------------------END ANIMATIONS--------------------------------------------------------------------------------------- //                  
+//  ------------------------------------------------END ANIMATIONS--------------------------------------------------------------------------------------- //
 
 
   
@@ -660,7 +660,7 @@ function updateInfoContainer(clicked)
          {
          if($clicked.data('school') === 'WSU')
                 { schoolData = data.responseJSON[$clicked.data('school')].campus.WSUP }
-             else 
+             else
                 { schoolData = data.responseJSON[$clicked.data('school')]; }
              
              infoClone = infoTemplate.cloneNode(true);
@@ -670,8 +670,8 @@ function updateInfoContainer(clicked)
              infoSchoolGeneral = infoContainer.children[0].children[0].children[0];
           //   infoSchoolGeneral.children[0];
 
-             infoHeader = [schoolData.abrev, 
-                            schoolData.full, 
+             infoHeader = [schoolData.abrev,
+                            schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
              for(i = 0; i < 3; i++) { infoSchoolGeneral.children[i].innerHTML = infoHeader[i]; }
@@ -682,7 +682,7 @@ function updateInfoContainer(clicked)
               
              infoTiles = [ [], [] ];    // ARRAY 1 HOLDS TILE OBJECTS | ARRAY 2 HOLDS SUBJECT KEY ("QUA")
                  
-             for(i = 0; i < 4; i++) 
+             for(i = 0; i < 4; i++)
                 {
                 for(j = 0;j < 2; j++)   // PUSHES ITEMS INTO ARRAYS ABOVE
                     {
@@ -711,7 +711,7 @@ function updateInfoContainer(clicked)
                      hasOr = false;
                                        //   LOOP THROUGH SUBJECT CLASSES AND APPEND LABEL CHUNKS
                      for(j = 0; j < curSubject.classes.length; j++)
-                         {                     
+                         {
                          if( !(curSubject.classes[j].hasOwnProperty('abrev1')) )
                              {              // IF SINGLE CLASS (NOT BUNDLED) APPLY NORMAL LABEL CHUNK
                              labelClone = labelTemplate1.cloneNode(true);
@@ -750,7 +750,7 @@ function updateInfoContainer(clicked)
                              // FILL TILE BODY WITH TEXT
                              curBodyNum.innerHTML = curSubject.classes[j].credits;
                              curBodyText.children[0].innerHTML = curSubject.classes[j].abrev;
-                             if(curSubject.classes[j].full !== '') 
+                             if(curSubject.classes[j].full !== '')
                                 { curBodyText.children[1].innerHTML = curSubject.classes[j].full; }
                              else
                                  { curBodyText.removeChild(curBodyText.children[1]); }
@@ -760,7 +760,7 @@ function updateInfoContainer(clicked)
                          else       //  IF BUNDLED CLASSES APPLY LABEL 2 CHUNK
                              {
                              labelClone = labelTemplate2.cloneNode(true);
-                             label = labelClone.childNodes[0];   
+                             label = labelClone.childNodes[0];
                              curBodyInput = label.children[0];
                                  
                              curBodyNum = label.children[2].children[0]
@@ -846,7 +846,7 @@ function updatePanels()
    var midCur = $midPanel.data('school');
    var rightCur = $rightPanel.data('school');
     
-   var schoolData, briefClone, briefPanel, briefHeader, 
+   var schoolData, briefClone, briefPanel, briefHeader,
        briefItems, briefItemsContent, noSchoolClone, i;
     
    var classOrder = ['MAJ', 'QUA', 'SOC', 'NAT', 'HUM', 'COM', 'UNI', 'ELE'];
@@ -865,7 +865,7 @@ function updatePanels()
          if(panelPool[0] === 'noschool')
              {
              noSchoolClone = noSchoolTemplate.cloneNode(true);
-             $leftPanel.empty().append(noSchoolClone); 
+             $leftPanel.empty().append(noSchoolClone);
              }
          else if (panelPool[0])
              {
@@ -875,8 +875,8 @@ function updatePanels()
              briefPanel = briefClone.childNodes[0];
              
                  
-             briefHeader = [schoolData.abrev, 
-                            schoolData.full, 
+             briefHeader = [schoolData.abrev,
+                            schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
              if(panelPool[0] === 'WSU') { schoolData = data.responseJSON[panelPool[0]].campus.WSUP }
@@ -894,7 +894,7 @@ function updatePanels()
                                       briefItems[0].children[i].children[1].innerHTML = briefItemsContent[1][i]; }
                
              for(i = 0; i < 3; i++) { briefItems[1].children[i].children[0].innerHTML = briefItemsContent[0][i+4];
-                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }  
+                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }
 //              for(i = 0; i < 8; i++) { briefItems[i].children[0].innerHTML = briefItemsContent[0][i];
 //                                       briefItems[i].children[1].innerHTML = briefItemsContent[1][i]; }
                  
@@ -919,7 +919,7 @@ function updatePanels()
          if(panelPool[1] === 'noschool')
              {
              noSchoolClone = noSchoolTemplate.cloneNode(true);
-             $midPanel.empty().append(noSchoolClone); 
+             $midPanel.empty().append(noSchoolClone);
              }
          else if (panelPool[1])
              {
@@ -929,8 +929,8 @@ function updatePanels()
              briefPanel = briefClone.childNodes[0];
              
                  
-             briefHeader = [schoolData.abrev, 
-                            schoolData.full, 
+             briefHeader = [schoolData.abrev,
+                            schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
              if(panelPool[1] === 'WSU') { schoolData = data.responseJSON[panelPool[1]].campus.WSUP }
@@ -949,7 +949,7 @@ function updatePanels()
                                       briefItems[0].children[i].children[1].innerHTML = briefItemsContent[1][i]; }
                
              for(i = 0; i < 3; i++) { briefItems[1].children[i].children[0].innerHTML = briefItemsContent[0][i+4];
-                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }  
+                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }
 //              for(i = 0; i < 8; i++) { briefItems[i].children[0].innerHTML = briefItemsContent[0][i];
 //                                       briefItems[i].children[1].innerHTML = briefItemsContent[1][i]; }
                  
@@ -975,7 +975,7 @@ function updatePanels()
          if(panelPool[2] === 'noschool')
              {
              noSchoolClone = noSchoolTemplate.cloneNode(true);
-             $rightPanel.empty().append(noSchoolClone); 
+             $rightPanel.empty().append(noSchoolClone);
              }
          else if (panelPool[2])
              {
@@ -985,8 +985,8 @@ function updatePanels()
              briefPanel = briefClone.childNodes[0];
              
                  
-             briefHeader = [schoolData.abrev, 
-                            schoolData.full, 
+             briefHeader = [schoolData.abrev,
+                            schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
              if(panelPool[2] === 'WSU') { schoolData = data.responseJSON[panelPool[2]].campus.WSUP }
@@ -1004,7 +1004,7 @@ function updatePanels()
                                       briefItems[0].children[i].children[1].innerHTML = briefItemsContent[1][i]; }
                
              for(i = 0; i < 3; i++) { briefItems[1].children[i].children[0].innerHTML = briefItemsContent[0][i+4];
-                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }  
+                                      briefItems[1].children[i].children[1].innerHTML = briefItemsContent[1][i+4]; }
 //              for(i = 0; i < 8; i++) { briefItems[i].children[0].innerHTML = briefItemsContent[0][i];
 //                                       briefItems[i].children[1].innerHTML = briefItemsContent[1][i]; }
                  
@@ -1041,18 +1041,18 @@ function updatePanels()
 function defineAnimations(relLeftPos, relMidPos, relRightPos)
 {
     
-animations = 
+animations =
     {
 left :    {
-          clicked : 
+          clicked :
                    {
                    begin  :
                             [
                                 ['position', 'absolute'],
                                 ['left', relLeftPos[0] + 'px'],
                                 ['transition', 'transform 400ms ease 100ms'],
-                                ['transform', 'translate(' + 
-                                    (relMidPos[0] - relLeftPos[0]) + 'px,' + 
+                                ['transform', 'translate(' +
+                                    (relMidPos[0] - relLeftPos[0]) + 'px,' +
                                     (relMidPos[1] - relLeftPos[1]) + 'px)']
                             ],
                                 
@@ -1070,9 +1070,9 @@ left :    {
                             ]
                    },
 
-          notclicked : 
+          notclicked :
                      {
-                     begin  : 
+                     begin  :
                                [
                                     ['position', 'absolute'],
                                     ['left', relLeftPos[0] + 'px'],
@@ -1089,10 +1089,10 @@ left :    {
                                ]
                      },
 
-          revert : 
-                   {  
+          revert :
+                   {
                    ifclicked : {    // CURRENT PANEL OPEN
-                             begin  : 
+                             begin  :
                                        [
                                             ['width', '33.33333333%'],
                                             ['transform', 'scaleX(3) translateX(33.33333333%)']
@@ -1104,14 +1104,14 @@ left :    {
                                            ['transform', '']
                                  
                                        ],
-                             end :     [   
+                             end :     [
                                             ['transition', '']
 
                                        ]
                                },
 
-                   ifnotclicked : {     
-                             begin  : 
+                   ifnotclicked : {
+                             begin  :
                                        [
                                             ['width', '33.33333333%'],
                                             ['transform', 'scale(0) translateX(1000%)'],
@@ -1132,7 +1132,7 @@ left :    {
           },
 
 middle :  {
-          clicked : 
+          clicked :
                    {
                    begin  :
                             [
@@ -1150,11 +1150,11 @@ middle :  {
                             ]
                    },
 
-          notclicked : 
+          notclicked :
                     {
 
                      leftclicked : {
-                                     begin  : 
+                                     begin  :
                                                [
                                                     ['transition', 'transform 800ms ease, opacity 800ms ease'],
                                                     ['transform', 'scale(0) translateX(-1250%)'],
@@ -1167,7 +1167,7 @@ middle :  {
                                                ]
                                      },
                    rightclicked : {
-                                     begin  : 
+                                     begin  :
                                                [
                                                     ['transition', 'transform 800ms ease, opacity 800ms ease'],
                                                     ['transform', 'scale(0) translateX(1250%)'],
@@ -1181,10 +1181,10 @@ middle :  {
                                      }
                     },
 
-          revert : 
-                   {  
+          revert :
+                   {
                    ifclicked : {    // CURRENT PANEL OPEN
-                             begin  : 
+                             begin  :
                                        [
                                             ['width', '33.33333333%'],
                                             ['transform', 'scaleX(3)']
@@ -1195,16 +1195,16 @@ middle :  {
                                             ['transition', 'transform 900ms ease 100ms'],
                                             ['transform', '']
                                        ],
-                             end :     [    
+                             end :     [
                                             
                                             ['transition', '']
                                        ]
                                },
 
-                   ifnotclicked : {     
+                   ifnotclicked : {
 
                               rightclicked : {
-                                             begin  : 
+                                             begin  :
                                                        [
                                                             ['width', '33.33333333%'],
                                                             ['transform', 'scale(0) translateX(1250%)'],
@@ -1221,7 +1221,7 @@ middle :  {
                                                        ]
                                              },
                               leftclicked : {
-                                             begin  : 
+                                             begin  :
                                                        [
                                                             ['width', '33.33333333%'],
                                                             ['transform', 'scale(0) translateX(-1250%)'],
@@ -1232,7 +1232,7 @@ middle :  {
                                                             ['transform', ''],
                                                             ['opacity', '']
                                                        ],
-                                             end :     [ 
+                                             end :     [
                                                             ['transition', '']
                                                        ]
                                              }
@@ -1242,14 +1242,14 @@ middle :  {
           },
 
 right :   {
-          clicked : 
+          clicked :
                    {
                    begin  :
                             [
                                 ['position', 'absolute'],
                                 ['left', relRightPos[0] + 'px'],
                                 ['transition', 'transform 400ms ease 100ms'],
-                                ['transform', 'translateX(' + 
+                                ['transform', 'translateX(' +
                                     (relMidPos[0]-relRightPos[0]) + 'px']
                             ],
                                 
@@ -1268,9 +1268,9 @@ right :   {
                             ]
                    },
 
-          notclicked : 
+          notclicked :
                      {
-                     begin  : 
+                     begin  :
                                [
                                     ['position', 'absolute'],
                                     ['left', relRightPos[0] + 'px'],
@@ -1286,10 +1286,10 @@ right :   {
                                ]
                      },
 
-          revert : 
-                   {  
+          revert :
+                   {
                    ifclicked : {    // CURRENT PANEL OPEN
-                             begin  : 
+                             begin  :
                                        [
                                             ['position', 'absolute'],
                                             ['left', relRightPos[0] + 'px'],
@@ -1303,15 +1303,15 @@ right :   {
                                            ['transform', 'scale(1) translate(0, 0)']
                                  
                                        ],
-                             end :     [   
+                             end :     [
                                             ['position', 'relative'],
                                             ['left', ''],
                                             ['transition', ''],
                                        ]
                                },
 
-                   ifnotclicked : {     
-                             begin  : 
+                   ifnotclicked : {
+                             begin  :
                                        [
                                             ['position', 'absolute'],
                                             ['left', '66.66666666%'],
@@ -1458,7 +1458,7 @@ function loadSchoolJSON()
 {
 
     try
-    {   
+    {
         
                 data = $.getJSON('school_data.json')
                 .done(function(){console.log('success');
@@ -1582,7 +1582,7 @@ labelElement2.innerHTML = '<input type="radio" id="MAJ-2" name="MAJ" />' +
 
                                     '</div>';
     
-labelTemplate2.appendChild(labelElement2);                                                    
+labelTemplate2.appendChild(labelElement2);
               
     
 var infoElement = document.createElement('div');
@@ -1616,7 +1616,7 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                                                     '</div>' +
                                                         '<div class="col-xs-9 info-text"></div>' +
                                                     '</div>' +
-                                            '<div class="col-xs-12 info-body">' +  
+                                            '<div class="col-xs-12 info-body">' +
                                             '</div>' +
                                         '</div>' +
 
@@ -1647,7 +1647,7 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                             '<div class="col-xs-9 info-text"></div>' +
                                         '</div>' +
     
-                                        '<div class="col-xs-12 info-body">' + 
+                                        '<div class="col-xs-12 info-body">' +
                                             '</div>' +
     
                                     '</div>' +
@@ -1659,8 +1659,8 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                                 '<div class="info-num-spacer"><div class="col-xs-12 info-num"></div></div>' +
                                             '</div>' +
                                             '<div class="col-xs-9 info-text"></div>' +
-                                        '</div>' + 
-                                        '<div class="col-xs-12 info-body">' + 
+                                        '</div>' +
+                                        '<div class="col-xs-12 info-body">' +
                                          '</div>' +
     
                                     '</div>' +
@@ -1677,7 +1677,7 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                                 '</div>' +
                                                 '<div class="col-xs-9 info-text"></div>' +
                                             '</div>' +
-                                            '<div class="col-xs-12 info-body">' +  
+                                            '<div class="col-xs-12 info-body">' +
                                             '</div>' +
     
                                         '</div>' +
@@ -1707,7 +1707,7 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                                     '</div>' +
                                                     '<div class="col-xs-9 info-text"></div>' +
                                                 '</div>' +
-                                                '<div class="col-xs-12 info-body">' +  
+                                                '<div class="col-xs-12 info-body">' +
                                                 '</div>' +
     
                                             '</div>' +
@@ -1720,14 +1720,14 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
                                                     '</div>' +
                                                     '<div class="col-xs-9 info-text"></div>' +
                                                 '</div>' +
-                                                '<div class="col-xs-12 info-body">' +  
+                                                '<div class="col-xs-12 info-body">' +
                                                 '</div>' +
     
                                             '</div>' +
 
                                         '</div>' +
     
-                        '</div>'; 
+                        '</div>';
 infoTemplate.appendChild(infoElement);
     
 

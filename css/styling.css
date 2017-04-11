@@ -22,7 +22,7 @@
         8. PAGE 2
         9. PAGE 3
         10. PAGE 4
-        11. PAGE 5
+        11. PAGE 5=
      */
 
 /* ---------->>> END TABLE OF CONTENTS <<<-----------*/
@@ -69,14 +69,14 @@
 /* ---------->>>1. JS CLASSES <<<-----------*/
 
 /* .buttonSelected
-{ 
-    background-color: white; 
-    background-color: rgba(255, 255, 255, .7) !important; 
+{
+    background-color: white;
+    background-color: rgba(255, 255, 255, .7) !important;
 } */
 
 .hidden
 {
-    display: none !important;    
+    display: none !important;
 }
 
 .reallyHidden
@@ -114,7 +114,7 @@ body *
 #left-content, #middle-content,
 #right-content, .class-btn, .start-tile,
 .tile-row-section, .info-school-abrev,
-.info-school-full, .info-credit-req, 
+.info-school-full, .info-credit-req,
 .info-num, .panel-school-abrev,
 .panel-school-full, .panel-credit-req,
 .checkbox-holder, .info-data, .info-data-part-1,
@@ -176,9 +176,9 @@ body *
   user-select: none;
 }
 
-body * 
+body *
 {
-    overflow: visible;
+    overflow-y: visible;
 }
 
 .col-xs-12 { padding: 0; }
@@ -195,7 +195,7 @@ ol {
 a:link, a:visited, a:hover, a:active
 {
   color: rgb(255, 255, 255);
-  color: rgba(255, 255, 255, .9); 
+  color: rgba(255, 255, 255, .9);
 }
 
 #get-started-btn, #get-started-header *
@@ -218,7 +218,7 @@ a:link, a:visited, a:hover, a:active
     content:url(../pics/CWU_BG.jpg) url(../pics/EWU_BG.jpg) url(../pics/GU_BG.jpg) url(../pics/HU_BG.jpg)
         url(../pics/PLU_BG.jpg) url(../pics/SPU_BG.jpg) url(../pics/SU_BG.jpg) url(../pics/UWB_BG.jpg)
         url(../pics/UWS_BG.jpg) url(../pics/UWT_BG.jpg) url(../pics/WSU_BG.jpg) url(../pics/WU_BG.jpg) url(../pics/WWU_BG.jpg);
-}   
+}
 
 
 #background
@@ -280,9 +280,9 @@ a:link, a:visited, a:hover, a:active
 }
 
 #get-started-btn:hover
-{ 
+{
     background-color: white;
-    background-color: rgba(255, 255, 255, .1); 
+    background-color: rgba(255, 255, 255, .1);
 }
 
 #get-started-header
@@ -347,7 +347,7 @@ a:link, a:visited, a:hover, a:active
     z-index: -5;
     cursor: default;
   
-    opacity: 0; 
+    opacity: 0;
     filter: alpha(opacity=0);
     
     -webkit-transition-property: none;
@@ -360,7 +360,7 @@ a:link, a:visited, a:hover, a:active
     -webkit-transform: scaleY(16) translateY(-300%);
     transform: scaleY(16) translateY(-300%);
   
-    border-radius: 10%; 
+    border-radius: 10%;
 }
 
 .start-tile ~ .start-tile-hover
@@ -408,7 +408,7 @@ a:link, a:visited, a:hover, a:active
 /* ---------->>>6. PHOTO CREDIT <<<-----------*/
 #photo-credit
 {
-  top: 1%;
+  top: 0.3%;
   z-index: 100;
   text-align: right;
   position: absolute;
@@ -500,11 +500,12 @@ a:link, a:visited, a:hover, a:active
 #right-content
 {
   padding: 0;
-  height: 90%;
+  height: 95%;
   background-color: black;
   background-color: rgba(40, 0, 0, 0.65);
     box-shadow: 10px 10px 20px black;
-    overflow: auto; 
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 #left-content:hover,
@@ -558,12 +559,10 @@ a:link, a:visited, a:hover, a:active
 /* ---------->>>9. SCHOOL INFO CONTENT <<<-----------*/
 /* ---------->>>9. SCHOOL INFO CONTENT <<<-----------*/
 
-/*#info-container, #info-rows,
-#info-column-1, #info-column-2,
-#info-column-3, #info-column-4
+#info-container
 {
     height: 100%;
-}*/
+}
 
 
 #info-top-row,
@@ -747,7 +746,7 @@ a:link, a:visited, a:hover, a:active
 
 .info-head
 {
-    padding: 1%; 
+    padding: 1%;
     border-bottom: 1px solid white;
     border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
@@ -762,7 +761,7 @@ a:link, a:visited, a:hover, a:active
 .info-data-part-2
 {
     padding: 1%;
-    margin-top: 3%; 
+    margin-top: 3%;
     
 }
 
@@ -801,7 +800,7 @@ a:link, a:visited, a:hover, a:active
     position: absolute;
     top: 0;
     left: 40%;
-    overflow: visible;
+    overflow-y: visible;
 }
 
 .info-link-arrow::after
@@ -818,7 +817,6 @@ a:link, a:visited, a:hover, a:active
 .info-tile
 {
     height: 50%;
-    margin: 2%;
     padding: 2%
 }
 
@@ -875,7 +873,7 @@ input
     content: '';
     width: 35%;
     height: 35%;
-    overflow: visible;
+    overflow-y: visible;
     
     border-radius: 100%;
 }
@@ -918,7 +916,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 }
 
 
-.info-body label .info-data, 
+.info-body label .info-data,
 .info-data-part-1, .info-data-part-2
 {
     margin-top: 0;
@@ -1018,8 +1016,8 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         .panel-brief
         {
             height: 100%;
-            padding: 0; 
-        }   
+            padding: 0;
+        }
         .panel-school-abrev,
         .panel-school-full,
         .panel-credit-req
@@ -1033,7 +1031,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         }
         .panel-brief
         {
-            font-size: .9em;    
+            font-size: .9em;
         }
  
         .panel-credit-items > *
@@ -1055,6 +1053,10 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         .panel-brief .expand-note
         {
             padding: 2% 0;
+        }
+        .info-tile
+        {
+            margin-right:4%;
         }
   
        
@@ -1099,7 +1101,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         }
         .panel-brief
         {
-            font-size: 1em;    
+            font-size: 1em;
         }
         
         .panel-credit-req
@@ -1139,7 +1141,10 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         {
             display: none;
         }
-        
+        .info-tile
+        {
+            margin: 2%;
+        }
 
 }
 
@@ -1154,7 +1159,6 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
         .panel-credit-items
         {
             font-size: 0.8em;
-            
         }
         
 }
@@ -1169,7 +1173,11 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 {
     #flex-hold { display: block; }
     
-    #top-row { height: 100%; }
+    #top-row
+    {
+        height: 98%;
+        margin-top: 3%;
+    }
     
     #bottom-row { height: 100%; }
     
@@ -1190,7 +1198,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
     {
         overflow: auto;
     }*/
-/*     
+/*
     #bottom-row-section2 { height: 16.66666667%; }
      */
     
@@ -1252,6 +1260,12 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 /* 576-992px */
 @media (min-width: 576px)
 {
+    #top-row
+    {
+        height : 96%;
+        margin-top: 3%;
+    }
+    
     .tile-spacer { padding: 45%; }
     
     #top-tile-row,
@@ -1285,7 +1299,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
     
     #button-panel
     {
-        overflow: visible;
+        overflow-y: visible;
     }
     
     #bottom-row-section1 { height: 100%; }
@@ -1404,19 +1418,19 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
   background-color: #903b95;
   background: -webkit-linear-gradient(90deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: -o-linear-gradient(90deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5));   
+                              rgba(116,32,195,0.5));
   
   background: -moz-linear-gradient(90deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5));  
+                              rgba(116,32,195,0.5));
   
   background: linear-gradient(90deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5));   
+                              rgba(116,32,195,0.5));
 }
 
 
@@ -1425,19 +1439,19 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
   background-color: rgba(64, 104, 64, 0.2);
   background: -webkit-linear-gradient(135deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: -o-linear-gradient(135deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: -moz-linear-gradient(135deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: linear-gradient(135deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
 }
 
 
@@ -1446,19 +1460,19 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
   background-color: rgba(64, 104, 64, 0.2);
   background: -webkit-linear-gradient(45deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: -o-linear-gradient(45deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: -moz-linear-gradient(45deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
   
   background: linear-gradient(45deg,
                               rgba(203,207,87,0.5),
-                              rgba(116,32,195,0.5)); 
+                              rgba(116,32,195,0.5));
 }
 
 
@@ -1466,29 +1480,29 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 {
   background-color: #bb3a33;
   background: -webkit-linear-gradient(90deg,
-                              rgba(67,65,69,0.5),                   
+                              rgba(67,65,69,0.5),
                               rgba(127,43,38,0.5),
                               rgba(167,154,154,0.5));
   
   background: -o-linear-gradient(90deg,
-                              rgba(67,65,69,0.5),                   
+                              rgba(67,65,69,0.5),
                               rgba(127,43,38,0.5),
                               rgba(167,154,154,0.5));
   
   background: -moz-linear-gradient(90deg,
-                              rgba(67,65,69,0.5),                   
+                              rgba(67,65,69,0.5),
                               rgba(127,43,38,0.5),
                               rgba(167,154,154,0.5));
   
   background: linear-gradient(90deg,
-                              rgba(67,65,69,0.5),                   
+                              rgba(67,65,69,0.5),
                               rgba(127,43,38,0.5),
                               rgba(167,154,154,0.5));
 }
 
 .buttonSelected.WWU
 {
-  background-color: #5e5ce3;                      
+  background-color: #5e5ce3;
   background: -webkit-linear-gradient(90deg,
                               rgba(32,26,113,0.5),
                               rgba(83,73,225,0.5),
@@ -1512,7 +1526,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 
 .buttonSelected.GU
 {
-  background-color: #e0e1f1;               
+  background-color: #e0e1f1;
   background: -webkit-linear-gradient(70deg,
                               rgba(82,25,237,0.5),
                               rgba(212,209,221,0.5),
@@ -1558,7 +1572,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 
 .buttonSelected.PLU
 {
-  background-color: #ffcc00;                          
+  background-color: #ffcc00;
   background: -webkit-linear-gradient(90deg,
                               rgba(231,207,26,0.5),
                               rgba(6,4,35,0.5));
@@ -1579,7 +1593,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 
 .SPU.buttonSelected
 {
-  background-color: #69262d;                  
+  background-color: #69262d;
   background: -webkit-linear-gradient(90deg,
                               rgba(97,32,38,0.5),
                               rgba(225,163,169,0.5));
@@ -1619,7 +1633,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
   background: linear-gradient(130deg,
                               rgba(229,224,223, 0.5),
                               rgba(217,37,54,0.5),
-                              rgba(41,37,36, 0.5));       
+                              rgba(41,37,36, 0.5));
 }
 
 
