@@ -659,9 +659,9 @@ function updateInfoContainer(clicked)
     else
          {
          if($clicked.data('school') === 'WSU')
-                { schoolData = data.responseJSON[$clicked.data('school')].campus.WSUP }
+                { schoolData = data/*.responseJSON*/[$clicked.data('school')].campus.WSUP }
              else
-                { schoolData = data.responseJSON[$clicked.data('school')]; }
+                { schoolData = data/*.responseJSON*/[$clicked.data('school')]; }
              
              infoClone = infoTemplate.cloneNode(true);
               
@@ -716,7 +716,7 @@ function updateInfoContainer(clicked)
                              {              // IF SINGLE CLASS (NOT BUNDLED) APPLY NORMAL LABEL CHUNK
                              labelClone = labelTemplate1.cloneNode(true);
                              label = labelClone.childNodes[0];
-                                 // INTERNET EXPLORER DOESNT HAVE CHILDREN PROPERTTY OF DOCUMENT FRAGMENTS, HAVE TO USE CHILDNODES
+                                 // INTERNET EXPLORER DOESNT HAVE CHILDREN PROPERTY OF DOCUMENT FRAGMENTS, HAVE TO USE CHILDNODES
                              curBodyInput = label.children[0];
                              curBodyNum = label.children[2].children[0].children[0].children[0];
                              curBodyText = label.children[2].children[1];
@@ -869,7 +869,7 @@ function updatePanels()
              }
          else if (panelPool[0])
              {
-             schoolData = data.responseJSON[panelPool[0]];
+             schoolData = data/*.responseJSON*/[panelPool[0]];
              briefClone = briefTemplate.cloneNode(true);
               
              briefPanel = briefClone.childNodes[0];
@@ -879,7 +879,7 @@ function updatePanels()
                             schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
-             if(panelPool[0] === 'WSU') { schoolData = data.responseJSON[panelPool[0]].campus.WSUP }
+             if(panelPool[0] === 'WSU') { schoolData = data/*.responseJSON*/[panelPool[0]].campus.WSUP }
                  
              briefItems = briefPanel.children[3].children;
              briefItemsContent = [ [], [] ];
@@ -923,7 +923,7 @@ function updatePanels()
              }
          else if (panelPool[1])
              {
-             schoolData = data.responseJSON[panelPool[1]];
+             schoolData = data/*.responseJSON*/[panelPool[1]];
              briefClone = briefTemplate.cloneNode(true);
               
              briefPanel = briefClone.childNodes[0];
@@ -933,7 +933,7 @@ function updatePanels()
                             schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
-             if(panelPool[1] === 'WSU') { schoolData = data.responseJSON[panelPool[1]].campus.WSUP }
+             if(panelPool[1] === 'WSU') { schoolData = data/*.responseJSON*/[panelPool[1]].campus.WSUP }
                  
              briefItems = briefPanel.children[3].children;
                             //briefItems = briefPanel.children[3].children;
@@ -979,7 +979,7 @@ function updatePanels()
              }
          else if (panelPool[2])
              {
-             schoolData = data.responseJSON[panelPool[2]];
+             schoolData = data/*.responseJSON*/[panelPool[2]];
              briefClone = briefTemplate.cloneNode(true);
               
              briefPanel = briefClone.childNodes[0];
@@ -989,7 +989,7 @@ function updatePanels()
                             schoolData.full,
                             'Credits: ' + schoolData.minCredits];
                  
-             if(panelPool[2] === 'WSU') { schoolData = data.responseJSON[panelPool[2]].campus.WSUP }
+             if(panelPool[2] === 'WSU') { schoolData = data/*.responseJSON*/[panelPool[2]].campus.WSUP }
                  
              briefItems = briefPanel.children[3].children;
              briefItemsContent = [ [], [] ];
@@ -1452,7 +1452,7 @@ var $rightPanel = $('#right-content');
 var panelPool = [];
 
 var data;
-loadSchoolJSON();
+/*loadSchoolJSON();
     
 function loadSchoolJSON()
 {
@@ -1467,7 +1467,7 @@ function loadSchoolJSON()
                     alert('Problem occured loading school info will retry soon.');
                     setTimeout(loadSchoolJSON, 5000);
                                 
-             
+              
                                 });
             
     }
@@ -1477,7 +1477,7 @@ function loadSchoolJSON()
         setTimeout(loadSchoolJSON, 5000);
     }
   
-}
+}*/
   
 var briefTemplate = document.createDocumentFragment();
 var infoTemplate = document.createDocumentFragment();
@@ -1731,9 +1731,2500 @@ infoElement.innerHTML = '<div id="info-left-col" class="col-md-3 col-xs-12">' +
 infoTemplate.appendChild(infoElement);
     
 
+
     
 init();
 
+data = {
+"CWU" : {
+        "abrev" : "CWU",
+        "full" : "Central Washington University",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "0",
+                          "classes" :
+                                    [
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "10-15",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+"EWU" : {
+        "abrev" : "EWU",
+        "full" : "Eastern Washington University",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 102",
+                                          "full" : "English Composition 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHIL 212",
+                                          "full" : "Introductory Ethics",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "0",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH 231",
+                                          "full" : "Linear Algebra",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "EENG 160",
+                                          "full" : "Digital Circuits",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "0-5",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"UWS" : {
+        "abrev" : "UWS",
+        "full" : "University of Washington Seattle",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "0",
+                          "classes" :
+                                    [
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "10-15",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"UWB" : {
+        "abrev" : "UWB",
+        "full" : "University of Washington Bothell",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "C#, C++, JAVA",
+                                          "full" : "Only one language",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "C#, C++, JAVA",
+                                          "full" : "Only one language",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "STATS",
+                                          "full" : "Statistics",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "0",
+                          "classes" :
+                                    [
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"UWT" : {
+        "abrev" : "UWT",
+        "full" : "University of Washington Tacoma",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "lab based science",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "STATS",
+                                          "full" : "Statistics",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "JAVA",
+                                          "full" : "Intro Programming",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "JAVA",
+                                          "full" : "Object Oriented Programming",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "STATS",
+                                          "full" : "Statistics",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "0",
+                          "classes" :
+                                    [
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+
+"WSU" : {
+    
+            "abrev" : "WSU",
+            "full" : "Washington State University",
+            "minCredits" : "90",
+            "campus" :
+                    {
+                        
+            "WSUP" : {
+                    "abrev" : "WSUP",
+                    "full" : "Washington State University Pullman",
+                    "minCredits" : "90",
+                    "reco" : "Recommends Discrete Structures. Discrete Structures is a certification course for computer science and as such is required for admittance to the computer science program. Recommends Macro or Micro economics to meet five credits of the social science requirement.",
+                    "reqs" :
+                            {
+                              "COM" :
+                                    {
+                                      "full" : "Communication Skills",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ENGL& 101",
+                                                      "full" : "English Composition",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ENGL& 235",
+                                                      "full" : "Technical Writing",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "QUA" :
+                                    {
+                                      "full" : "Quantitative / Symbolic Reasoning",
+                                      "credits" : "5",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "MATH& 151",
+                                                      "full" : "Calculus 1",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "HUM" :
+                                    {
+                                      "full" : "Humanities",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "SOC" :
+                                    {
+                                      "full" : "Social Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "See recommendations",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "NAT" :
+                                    {
+                                      "full" : "Natural Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS& 221",
+                                                      "full" : "Engineering Physics 1 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "PHYS& 222",
+                                                      "full" : "Engineering Physics 2 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 152",
+                                                      "full" : "Calculus 2",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "MAJ" :
+                                    {
+                                      "full" : "Major Requirements",
+                                      "credits" : "20",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY C++, JAVA",
+                                                      "full" : "Computer Programming 1",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY C++, JAVA",
+                                                      "full" : "Computer Programming 2",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 153",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 254",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "UNI" :
+                                    {
+                                      "full" : "University Specific Requirements",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS, BIO, EARTH",
+                                                      "full" : "Science with lab",
+                                                      "credits" : "5"
+                                                    },
+
+                                                    {
+                                                      "abrev" : "PHYS& 223",
+                                                      "full" : "Engineering Physics 3 with lab",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "ELE" :
+                                    {
+                                      "full" : "Electives",
+                                      "credits" : "5",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHIL& 120",
+                                                      "full" : "Symbolic Logic",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    }
+
+
+                            }
+                 },
+                        
+                        
+
+            "WSUV" : {
+                    "abrev" : "WSUV",
+                    "full" : "Washington State University Vancouver",
+                    "minCredits" : "90",
+                    "reco" : "Recommends Discrete Structures. Discrete Structures is a certification course for computer science and as such is required for admittance to the computer science program",
+                    "reqs" :
+                            {
+                              "COM" :
+                                    {
+                                      "full" : "Communication Skills",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ENGL& 101",
+                                                      "full" : "English Composition",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ENGL& 235",
+                                                      "full" : "Technical Writing",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "QUA" :
+                                    {
+                                      "full" : "Quantitative / Symbolic Reasoning",
+                                      "credits" : "5",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "MATH& 151",
+                                                      "full" : "Calculus 1",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "HUM" :
+                                    {
+                                      "full" : "Humanities",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "SOC" :
+                                    {
+                                      "full" : "Social Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ECON& 201",
+                                                      "full" : "Macro Economics",
+                                                      "credits" : "5",
+                                                        "or" : "true"
+                                                    },
+                                                    {
+                                                      "abrev" : "ECON& 202",
+                                                      "full" : "Micro Economics",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "NAT" :
+                                    {
+                                      "full" : "Natural Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS& 221",
+                                                      "full" : "Engineering Physics 1 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "PHYS& 222",
+                                                      "full" : "Engineering Physics 2 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 152",
+                                                      "full" : "Calculus 2",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "MAJ" :
+                                    {
+                                      "full" : "Major Requirements",
+                                      "credits" : "20",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY C++, JAVA",
+                                                      "full" : "Computer Programming 1",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY C++, JAVA",
+                                                      "full" : "Computer Programming 2",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 153",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 254",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "UNI" :
+                                    {
+                                      "full" : "University Specific Requirements",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS, BIO, EARTH",
+                                                      "full" : "Science with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "PHYS& 223",
+                                                      "full" : "Engineering Physics 3 with lab",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "ELE" :
+                                    {
+                                      "full" : "Electives",
+                                      "credits" : "0",
+                                      "classes" :
+                                                [
+                                                ]
+                                    }
+
+
+                            }
+                 },
+
+
+
+
+            
+
+
+            "WSUT" : {
+                    "abrev" : "WSUT",
+                    "full" : "Washington State University Tri-cities",
+                    "minCredits" : "90",
+                    "reco" : "Recommends Discrete Structures. Discrete Structures is a certification course for computer science and as such is required for admittance to the computer science program. Recommends Macro or Micro economics to meet five credits of the social science requirement.",
+                    "reqs" :
+                            {
+                              "COM" :
+                                    {
+                                      "full" : "Communication Skills",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ENGL& 101",
+                                                      "full" : "English Composition",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ENGL& 235",
+                                                      "full" : "Technical Writing",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "QUA" :
+                                    {
+                                      "full" : "Quantitative / Symbolic Reasoning",
+                                      "credits" : "5",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "MATH& 151",
+                                                      "full" : "Calculus 1",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "HUM" :
+                                    {
+                                      "full" : "Humanities",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "SOC" :
+                                    {
+                                      "full" : "Social Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY",
+                                                      "full" : "See recommendations",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "NAT" :
+                                    {
+                                      "full" : "Natural Sciences",
+                                      "credits" : "15",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS& 221",
+                                                      "full" : "Engineering Physics 1 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "PHYS& 222",
+                                                      "full" : "Engineering Physics 2 with lab",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 152",
+                                                      "full" : "Calculus 2",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "MAJ" :
+                                    {
+                                      "full" : "Major Requirements",
+                                      "credits" : "20",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "ANY C++",
+                                                      "full" : "Computer Programming 1",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "ANY C++",
+                                                      "full" : "Computer Programming 2",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 153",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    },
+                                                    {
+                                                      "abrev" : "MATH& 254",
+                                                      "full" : "Calculus 3",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "UNI" :
+                                    {
+                                      "full" : "University Specific Requirements",
+                                      "credits" : "10",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHYS, BIO, EARTH",
+                                                      "full" : "Science with lab",
+                                                      "credits" : "5"
+                                                    },
+
+                                                    {
+                                                      "abrev" : "PHYS& 223",
+                                                      "full" : "Engineering Physics 3 with lab",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    },
+                                "ELE" :
+                                    {
+                                      "full" : "Electives",
+                                      "credits" : "5",
+                                      "classes" :
+                                                [
+                                                    {
+                                                      "abrev" : "PHIL& 120",
+                                                      "full" : "Symbolic Logic",
+                                                      "credits" : "5"
+                                                    }
+                                                ]
+                                    }
+
+
+                            }
+                 }
+             }
+
+         },
+
+
+ "WWU" : {
+        "abrev" : "WWU",
+        "full" : "Western Washington University",
+        "minCredits" : "90",
+        "reco" : "",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS, BIO, EARTH",
+                                          "full" : "Science with lab",
+                                          "credits" : "5"
+                                        },
+                                    
+                                        {
+                                          "abrev" : "PHYS& 223",
+                                          "full" : "Engineering Physics 3 with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "0-5",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+   
+     
+"GU" : {
+        "abrev" : "GU",
+        "full" : "Gonzaga University",
+        "minCredits" : "90",
+        "reco" : "Recommends Calculus 4, Critical Thinking (Symbolic Logic), Differential Equations, and Intro to Literature to fulfill graduation requirements.",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHIL& 101",
+                                          "full" : "Philosophy",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "CMST& 101",
+                                          "full" : "Communications",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ETHICS",
+                                          "full" : "Ethics",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH",
+                                          "full" : "Discrete Math",
+                                          "credits" : "5"
+                                        },
+                                    
+                                        {
+                                          "abrev" : "PHYS& 223",
+                                          "full" : "Engineering Physics 3 with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "0-5",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+     
+"HU" : {
+        "abrev" : "HU",
+        "full" : "Heritage University",
+        "minCredits" : "90",
+        "reco" : "Discrete Math and Statistics will be evaluated for comparability to Heritage's SPSC 231 and Math 221 courses. (Other lower level courses taken by Computer Science majors, which may need to be taken prior to graduation. Similar courses taken at other institutions will be evaluated at time of transfer and credit may be applied towards major, general education or electives as appropriate).",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 223",
+                                          "full" : "Engineering Physics 3 with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "5-10",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"PLU" : {
+        "abrev" : "PLU",
+        "full" : "Pacific Lutheran University",
+        "minCredits" : "90",
+        "reco" : "Intro to CS, Digital Systems, Data Structures, Statistics, and Discrete Structures will be evaluated for comparability to PLU's, CSCE 144, 231, 270, and Math 242, 245 courses. (Other lower level courses taken by Computer Science majors, which may need to be taken prior to graduation. Similar courses taken at other institutions will be evaluated at time of transfer and credit may be applied towards major, general education or electives as appropriate).",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS, BIO, EARTH",
+                                          "full" : "Science with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "5-10",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"SPU" : {
+        "abrev" : "SPU",
+        "full" : "Seattle Pacific University",
+        "minCredits" : "90",
+        "reco" : "Prefers C++ but accepts Java with SPU bridge course. Math& 153 will be evaluated for comparability to SPU's Math 1236. (Other lower level courses taken by Computer Science majors, which may need to be taken prior to graduation. Similar courses taken at other institutions will be evaluated at time of transfer and credit may be applied towards major, general education or electives as appropriate).",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "See recommendations.",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "See recommendations",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS, BIO, EARTH",
+                                          "full" : "Science with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "5-10",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"SU" : {
+        "abrev" : "SU",
+        "full" : "Seattle University",
+        "minCredits" : "90",
+        "reco" : "Programming and Problem Solving 1 and 2 will be evaluated for comparability to CPSC 1420 and 1430 courses. (Other lower level courses taken by Computer Science majors, which may need to be taken prior to graduation. Similar courses taken at other institutions will be evaluated at time of transfer and credit may be applied towards major, general education or electives as appropriate).",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ENGL& 235",
+                                          "full" : "Technical Writing",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS, BIO, EARTH",
+                                          "full" : "Science with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "5-10",
+                          "classes" :
+                                    [
+                                    ]
+                        }
+
+
+                }
+     },
+    
+    
+"WU" : {
+        "abrev" : "WU",
+        "full" : "Whitworth University",
+        "minCredits" : "90",
+        "reco" : "Recommends electives include one Fine Art and one course fulfilling \"American Diversity\".",
+        "reqs" :
+                {
+                  "COM" :
+                        {
+                          "full" : "Communication Skills",
+                          "credits" : "10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ENGL& 101",
+                                          "full" : "English Composition",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ORAL",
+                                          "full" : "Oral Communication",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "QUA" :
+                        {
+                          "full" : "Quantitative / Symbolic Reasoning",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "MATH& 151",
+                                          "full" : "Calculus 1",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "HUM" :
+                        {
+                          "full" : "Humanities",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "SOC" :
+                        {
+                          "full" : "Social Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "NAT" :
+                        {
+                          "full" : "Natural Sciences",
+                          "credits" : "15",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 221",
+                                          "full" : "Engineering Physics 1 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "PHYS& 222",
+                                          "full" : "Engineering Physics 2 with lab",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 152",
+                                          "full" : "Calculus 2",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "MAJ" :
+                        {
+                          "full" : "Major Requirements",
+                          "credits" : "15-20",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 1",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev" : "ANY C++, JAVA",
+                                          "full" : "Computer Programming 2",
+                                          "credits" : "5"
+                                        },
+                                        {
+                                          "abrev1" : "MATH& 153",
+                                          "abrev2" : "MATH& 254",
+                                          "full" : "Calculus 3",
+                                          "credits" : "10",
+                                          "or" : "true"
+                                        },
+                                        {
+                                          "abrev" : "MATH& 163",
+                                          "full" : "Calculus 3",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "UNI" :
+                        {
+                          "full" : "University Specific Requirements",
+                          "credits" : "5",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "PHYS& 223",
+                                          "full" : "Engineering Physics 3 with lab",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        },
+                    "ELE" :
+                        {
+                          "full" : "Electives",
+                          "credits" : "5-10",
+                          "classes" :
+                                    [
+                                        {
+                                          "abrev" : "ANY",
+                                          "full" : "See recommendations",
+                                          "credits" : "5"
+                                        }
+                                    ]
+                        }
+
+
+                }
+     }
+};
 
 
 

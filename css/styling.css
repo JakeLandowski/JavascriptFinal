@@ -45,6 +45,31 @@
 
 @keyframes pulse
 {
+  0%
+  {
+      transform: scale(0.9);
+      background-color: black;
+      background-color: rgba(50, 50, 0, 0.55);
+  }
+  
+  
+  50%
+  {
+      transform: scale(1);
+      background-color: black;
+      background-color: rgba(0, 10, 0, 0.55);
+      
+  }
+  100%
+  {
+      transform: scale(0.9);
+      background-color: black;
+      background-color: rgba(50, 50, 0, 0.55);
+    }
+}
+
+@keyframes pulseNoColor
+{
   0%{ transform: scale(0.9); }
   50%{ transform: scale(1) }
   100%{ transform: scale(0.9); }
@@ -587,20 +612,14 @@ a:link, a:visited, a:hover, a:active
     padding: 1%;
 }
 
-#info-left-col
+.info-school > *
 {
-    height: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-
-#info-school-container
-{
-    height: 35%;
-}
-
 .info-school,
 .info-reco
 {
-    height: 100%;
     padding: 5%;
 }
 
@@ -924,7 +943,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 
 #arrow
 {
-  animation: pulse 4s ease infinite;
+  animation: pulseNoColor 4s ease infinite;
 }
 
 @media (min-width: 1px)
@@ -1006,7 +1025,7 @@ input[type=radio]:checked ~ .checkbox-holder .check-box::before
 
 .expand-note
 {
-  animation: pulse 4s ease infinite;
+  animation: pulseNoColor 4s ease infinite;
 }
        
 
