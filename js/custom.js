@@ -607,7 +607,7 @@ function changeBackground(clicked)
         {
         var school = $(clicked).data('school');
         $background.css({
-                            'background-image' : 'url(pics/' + school + '_BG.jpg)',
+                            'background-image' : 'url(pics/' + school + '_BG_preblur.jpg)',
                             'background-size' : 'cover',
                             'background-repeat' : 'no-repeat',
                             'background-position' : 'center',

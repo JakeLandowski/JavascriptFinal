@@ -240,9 +240,9 @@ a:link, a:visited, a:hover, a:active
 #main::after
 {
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content:url(../pics/CWU_BG.jpg) url(../pics/EWU_BG.jpg) url(../pics/GU_BG.jpg) url(../pics/HU_BG.jpg)
-        url(../pics/PLU_BG.jpg) url(../pics/SPU_BG.jpg) url(../pics/SU_BG.jpg) url(../pics/UWB_BG.jpg)
-        url(../pics/UWS_BG.jpg) url(../pics/UWT_BG.jpg) url(../pics/WSU_BG.jpg) url(../pics/WU_BG.jpg) url(../pics/WWU_BG.jpg);
+    content:url(../pics/CWU_BG_preblur.jpg) url(../pics/EWU_BG_preblur.jpg) url(../pics/GU_BG_preblur.jpg) url(../pics/HU_BG_preblur.jpg)
+        url(../pics/PLU_BG_preblur.jpg) url(../pics/SPU_BG_preblur.jpg) url(../pics/SU_BG_preblur.jpg) url(../pics/UWB_BG_preblur.jpg)
+        url(../pics/UWS_BG_preblur.jpg) url(../pics/UWT_BG_preblur.jpg) url(../pics/WSU_BG_preblur.jpg) url(../pics/WU_BG_preblur.jpg) url(../pics/WWU_BG_preblur.jpg);
 }
 
 
@@ -253,17 +253,17 @@ a:link, a:visited, a:hover, a:active
   background-color: #375B37;
   margin: 0;
   padding: 0;
-  background: url(../pics/mainBG.jpg) no-repeat fixed center;
+  background: url(../pics/mainBG_preblur.jpg) no-repeat fixed center;
   background-size: cover;
     
   transition: background 500ms ease 1100ms;
  
  
-  -webkit-filter: blur(7px);
+  /*-webkit-filter: blur(7px);
   -moz-filter: blur(7px);
   -o-filter: blur(7px);
   -ms-filter: blur(7px);
-  filter: blur(7px);
+  filter: blur(7px);*/
   
   
   position: absolute;
